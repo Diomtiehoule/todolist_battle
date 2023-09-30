@@ -110,32 +110,32 @@ function Todolist() {
     return (
         <div>
             <h1>Bienvenu , {userInfo.nom}</h1>
-            <h1>Vos article à vendre</h1>
+            <h1>Que devez vous faire en ce moment</h1>
 
          <div className="article">
             <div className="produit">
                 <div className="nom">
-                <label htmlFor="">nom de produit</label><br />
+                <label htmlFor="">nom de projet</label><br />
             <input type="text"  placeholder="Nom du produit" key={projet.uuid} onChange={(e) => {setProjet(e.target.value)}}/>
                 </div>
             
             <div className="quantie">
-            <label htmlFor="">description produit</label><br />
+            <label htmlFor="">description projet</label><br />
             <input type="text" name="" id="" placeholder="quantité produit" onChange={(e) => {setDescription(e.target.value)}}/>
             </div>
             
             <div className="quantite">
-            <label htmlFor="">quantite article</label><br />
-            <input type="number" placeholder="0" onChange={(e) => {setQuantite(e.target.value)}}/>
+            <label htmlFor="">debut du projet</label><br />
+            <input type="text" placeholder="debut de projet" onChange={(e) => {setQuantite(e.target.value)}}/>
             </div>
 
             <div className="prix">
-            <label htmlFor="">Prix article</label><br />
-            <input type="number" placeholder="0" onChange={(e) => {setPrix(e.target.value)}}/>
+            <label htmlFor="">fin projet</label><br />
+            <input type="text" placeholder="fin projet" onChange={(e) => {setPrix(e.target.value)}}/>
             </div>
             
             </div>
-            <button onClick={writeDatabase}>Ajouter produit</button>
+            <button onClick={writeDatabase}>Créer le projet</button>
             
          </div>
 
@@ -143,11 +143,11 @@ function Todolist() {
             return (
             <>
             <div className="userArticle" key={article.uuid}>
-            <h1>{article.projet}</h1>
+            {/* <h1>{article.projet}</h1>
             <h2>{article.description}</h2>
             <h2>{article.quantite}</h2>
-            <h2>{article.prix}</h2>
-            <button onClick={()=>handleDelete(article)}>supprimer</button>
+            <h2>{article.prix}</h2> */}
+            {/* <button onClick={()=>handleDelete(article)}>supprimer</button> */}
 
             {/* {isEdit ? (
         <>
@@ -158,6 +158,36 @@ function Todolist() {
         <button onClick={writeDatabase}>valider</button>
       )
     } */}
+
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Projet</div>
+  </div>
+  <div class="card-body">
+    <form action="#">
+      <div class="form-group">
+        <h2><span>Nom du projet:</span> {article.projet}</h2><h3></h3>
+        
+        
+      </div>
+      <div class="form-group">
+        <h2><span>Description:</span> {article.description}</h2>
+      </div>
+      <div class="form-group">
+        <h2><span>debut:</span> {article.quantite}</h2>
+        
+      </div>
+      <div class="form-group">
+        <h2><span>durer:</span> {article.prix}</h2>
+        
+      </div>
+     <input type="submit" class="btn" value="supprimer" onClick={()=>handleDelete(article)}/>
+     <input type="submit" class="btn" value="modifier" />
+         </form>
+  </div>
+</div>
+
+
             </div>
             
             </>
