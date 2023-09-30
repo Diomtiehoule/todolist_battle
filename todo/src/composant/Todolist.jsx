@@ -82,27 +82,27 @@ function Todolist() {
       let {id} = useParams();
       console.log('id' , id)
   
-      async function getInfosUser(id){
-          try{
-              const querySnapshot = await getDocs(userCollection)
-              for(const doc of querySnapshot.docs){
-                  const documentData = doc.data();
-              const documentId = doc.id;
-              if(id === documentId){
-                  setUserInfo(documentData)
-                  console.log(userInfo)
-              }
-          }
-              console.log('dashboard')
-          } catch(err){
-              console.log("une erreur s'est produite lors de la recuperation des documents")
-          }
-          
-      }
-  
-      useEffect(() =>{
-          getInfosUser(id)
-      }, [id])
+      async function GetInfosUser(id){
+        try{
+            const querySnapshot =  await getDocs(userCollection)
+            for(const doc of querySnapshot.docs){
+                const documentData = doc.data();
+                const documentId = doc.id;
+                if(id === documentId) {
+                    setUserInfo(documentData);
+                    console.log(userInfo)
+                }
+            }
+            console.log('dashboard')
+        }
+        catch(err){
+        console.log('erreur de recuperation')
+    }
+}
+
+    useEffect(()=>{
+        GetInfosUser(id)
+    },[id]);
   
       console.log(userInfo)
 
