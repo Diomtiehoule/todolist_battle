@@ -63,16 +63,19 @@ function Registrer() {
             <form class="form" onSubmit={handleForm} ref={formRef}>
        <p class="form-title">Créer un compte</p>
        <div class="input-container">
+        <label htmlFor="">Nom utilisateur</label>
           <input type="text" placeholder="nom" ref={addInputs} onChange={(e) =>setName(e.target.value)}/>
           <span>
           </span>
       </div>
         <div class="input-container">
+            <label htmlFor="">Adresse email</label>
           <input type="email" placeholder="utilisateur@gmail.com" ref={addInputs} onChange={(e) =>setEmail(e.target.value)}/>
           <span>
           </span>
       </div>
       <div class="input-container">
+        <label htmlFor="">Mot de passe</label>
           <input type="password" placeholder="*******" ref={addInputs} onChange={(e) =>setPdw(e.target.value)}/>
         </div>
          <button type="submit" class="submit" onClick={userData}>

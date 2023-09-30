@@ -60,11 +60,13 @@ function Login() {
     <form class="form" onSubmit={handleLogin}>
        <p class="form-title">Connectez-vous à votre compte</p>
         <div class="input-container">
+            <label htmlFor="">Adresse mail </label>
           <input type="email" placeholder="utilisateur@gmail.com"  name='email' value={email} onChange={handleChange}/>
           <span>
           </span>
       </div>
       <div class="input-container">
+        <label htmlFor="">Mot de passe</label>
           <input type="password" placeholder="*******" name='password' onChange={handleChange} value={password} />
         </div>
          <button type="submit" class="submit">
